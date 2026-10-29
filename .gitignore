@@ -1,0 +1,9 @@
+.env
+node_modules/
+.next/
+__pycache__/
+data/*
+!data/.gitkeep
+assets/output/*
+!assets/output/.gitkeep
+.DS_Store

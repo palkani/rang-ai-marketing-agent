@@ -1,0 +1,16 @@
+services:
+  api:
+    build: ./backend
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./assets:/app/assets
+    ports:
+      - "127.0.0.1:8000:8000"
+  web:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on: [api]
+    ports:
+      - "127.0.0.1:3000:3000"
